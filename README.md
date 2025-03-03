@@ -2,13 +2,13 @@
 
 Teapool is a thread pool implementation for spawning threads for requests received over TCP connection and assigning the task to a worker.
 
-## APIs Available
+## APIs Available 📝
 
 Thread pool can be initialized with `new` associated function on `ThreadPool`, which takes an argument `size` to define the size of the thread pool.
 
 To execute the request received over TCP Stream the Thread Pool exposes the `execute` API which takes the arguments: `handler` which is a function which takes `TcpStream` as an argument, and `stream` of type `TcpStream`.
 
-## What happens when a thread pool is initialized?
+## What happens when a thread pool is initialized? ⚡
 
 - The thread pool initialization method creates two vectors (`senders` and `workers`) with the capacity of `size` which the initialization method takes as argument.
 
@@ -16,7 +16,7 @@ To execute the request received over TCP Stream the Thread Pool exposes the `exe
 
 - Finally it returns the `ThreadPool` with `workers`, `senders` and `next_sender` as it's members.
 
-## How a task is executed in the thread pool?
+## How a task is executed in the thread pool? 🛠️
 
 The execute method creates a tuple with the received arguments `handler` and `stream` and defines it as `job`.
 
@@ -24,12 +24,12 @@ Now the `senders` (vector) in the pool sends the `job` over the `sender` channel
 
 The `worker` which receives this specific job (the worker `id` will be equal to the `next_sender` variable) and runs the function by taking the `job`: (`handler`, `stream`) inside the thread in which the `worker` is running.
 
-<hr style="height: 1px;">
+<hr style="height: 1px; border: none; background-color: #e1e4e8; margin: 16px 0;">
 
 Happy Teapooling ☕
 
-<hr style="height: 1px;">
+<hr style="height: 1px; border: none; background-color: #e1e4e8; margin: 16px 0;">
 
-Here's an image of Ferris chilling on a pool table
+Here's an image of Ferris chilling on a pool table 🦀
 
 ![Ferris](./assets/teapool.jpg)
