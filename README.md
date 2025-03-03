@@ -24,11 +24,11 @@ Now the `senders` (vector) in the pool sends the `job` over the `sender` channel
 
 The `worker` which receives this specific job (the worker `id` will be equal to the `next_sender` variable) and runs the function by taking the `job`: (`handler`, `stream`) inside the thread in which the `worker` is running.
 
-<hr style="border: 1px solid blue; height: 2px;">
+<hr style="border: 1px solid gray; height: 1px;">
 
 Happy Teapooling ☕
 
-<hr style="border: 1px solid blue; height: 2px;">
+<hr style="border: 1px solid gray; height: 1px;">
 
 Here's an image of Ferris chilling on a pool table
 
