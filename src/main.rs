@@ -1,8 +1,8 @@
-use socktimized::ThreadPool;
 use std::{
     io::{self, Read, Write},
     net::{TcpListener, TcpStream},
 };
+use teapool::ThreadPool;
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:8000").expect("Socket is busy");
